@@ -1,8 +1,10 @@
 local g = vim.g
+local keymap = vim.keymap
 
 g.mapleader = ' '
 g.maplocalleader = ' '
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader>w', ':wa<CR>')
-vim.keymap.set('n', '<leader>q', ':q<CR>')
+keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+keymap.set('n', '<leader>w', ':w<CR>')
+keymap.set('n', '<leader>q', ':qa<CR>')
+keymap.set('n', '<leader>r', ':source %<CR>')
