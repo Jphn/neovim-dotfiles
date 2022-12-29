@@ -1,14 +1,11 @@
-require('lualine').setup {
+require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = "auto",
   },
   sections = {
-    lualine_a = {
-      {
-        'filename',
-        path = 1,
-      }
-    }
-  }
-}
+    lualine_a = { "mode" },
+    lualine_b = { { "filename", path = 1 } },
+    lualine_c = { "branch" },
+  },
+})
