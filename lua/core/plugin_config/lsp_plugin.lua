@@ -13,6 +13,34 @@ local on_attach = function(_, _)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 end
 
-require('lspconfig').sumneko_lua.setup {
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local lsp = require('lspconfig')
+
+lsp.sumneko_lua.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+          [vim.fn.stdpath 'config' .. '/lua'] = true,
+        },
+      },
+    },
+  },
+}
+
+lsp.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lsp.denols.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }

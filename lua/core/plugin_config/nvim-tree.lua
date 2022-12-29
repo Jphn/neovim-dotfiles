@@ -1,7 +1,28 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+require("nvim-tree").setup({
+	view = {
+		adaptive_size = true,
+		float = {
+			enable = true,
+		},
+	},
+	renderer = {
+		highlight_opened_files = "all",
+		indent_markers = {
+			enable = true,
+			icons = {
+				corner = "└ ",
+				edge = "│ ",
+				item = "│ ",
+				none = "  ",
+			},
+		},
+	},
+	actions = {
+		open_file = {
+			quit_on_open = true,
+		},
+	},
+})
 
-require('nvim-tree').setup()
-
-vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle<CR>')
-vim.keymap.set('n', '<leader>o', ':NvimTreeFocus<CR>')
+vim.keymap.set("n", "<leader>e", "<CMD>NvimTreeFindFileToggle<CR>")
+vim.keymap.set("n", "<leader>o", ":NvimTreeFocus<CR>")
