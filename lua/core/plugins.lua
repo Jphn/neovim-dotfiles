@@ -72,12 +72,22 @@ return require("packer").startup({
 		})
 
 		-- LSP (Mason and LSPConfig)
-		use("williamboman/mason.nvim")
-		use("williamboman/mason-lspconfig.nvim")
+		use({
+			"williamboman/mason.nvim",
+			config = function()
+				require("mason").setup()
+			end,
+		})
+		use({
+			"williamboman/mason-lspconfig.nvim",
+			config = function()
+				require("core.plugin_config.lsp.default")
+			end,
+		})
 		use({
 			"neovim/nvim-lspconfig",
 			config = function()
-				require("core.plugin_config.lsp_plugin")
+				require("core.plugin_config.lsp.servers")
 			end,
 		})
 
