@@ -7,13 +7,11 @@ opt.backspace = "2"
 opt.showcmd = true
 opt.laststatus = 2
 opt.autowrite = true
-opt.cursorline = true
 opt.autoread = true
 opt.clipboard = "unnamedplus"
 opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = nil
-opt.scrolloff = 8
 
 -- use spaces for tabs and whatnot
 opt.tabstop = 2
@@ -26,6 +24,8 @@ opt.backup = false
 opt.writebackup = false
 opt.undofile = true
 opt.swapfile = false
+opt.cursorline = true
+opt.scrolloff = 8
 
 -- Editor interface
 opt.number = true
