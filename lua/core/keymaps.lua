@@ -15,11 +15,15 @@ map("n", "<leader>s", ":wa<CR>")
 map("n", "<C-w>", ":bw<CR>")
 
 -- Buffer navigation
-map("n", "<leader>[", ":bn<CR>")
-map("n", "<leader>]", ":bp<CR>")
+map("n", "<C-l>", ":bn<CR>")
+map("n", "<C-h>", ":bp<CR>")
 
 -- Quit
 map("n", "<leader>q", ":qa!<CR>")
 
 -- Reload
 map("n", "<leader>r", ":source %<CR>")
+
+-- Split screen
+map("n", "<right>", "<CMD>wincmd l<CR>")
+map("n", "<left>", "<CMD>wincmd h<CR>")
