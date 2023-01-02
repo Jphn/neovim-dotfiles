@@ -11,6 +11,7 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lsp = require("lspconfig")
+local util = lsp.util
 
 lsp.sumneko_lua.setup({
   on_attach = on_attach,
@@ -33,11 +34,13 @@ lsp.sumneko_lua.setup({
 lsp.tsserver.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", "*.html"),
 })
 
 lsp.denols.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  root_dir = util.root_pattern("deno.json", "deno.jsonc"),
 })
 
 lsp.html.setup({
