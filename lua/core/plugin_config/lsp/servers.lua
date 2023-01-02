@@ -39,3 +39,8 @@ lsp.denols.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+lsp.html.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

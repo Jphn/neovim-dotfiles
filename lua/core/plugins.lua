@@ -66,6 +66,7 @@ return require("packer").startup({
     ----------------
     -- Treesitter --
     ----------------
+    use("windwp/nvim-ts-autotag")
     use({
       "nvim-treesitter/nvim-treesitter",
       config = function()
@@ -124,6 +125,8 @@ return require("packer").startup({
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-nvim-lsp")
     use("L3MON4D3/LuaSnip")
+    use("saadparwaiz1/cmp_luasnip")
+    use("rafamadriz/friendly-snippets")
     use({
       "hrsh7th/nvim-cmp",
       config = function()
@@ -131,14 +134,13 @@ return require("packer").startup({
       end,
     })
 
-    ---------------------------------------
-    -- Smart Pairs (auto close brackets) --
-    ---------------------------------------
+    -----------------------------------
+    -- Auto close pairs (Auto Pairs) --
+    -----------------------------------
     use({
-      "ZhiyuanLck/smart-pairs",
-      event = "InsertEnter",
+      "windwp/nvim-autopairs",
       config = function()
-        require("pairs"):setup()
+        require("core.plugin_config.auto-pairs")
       end,
     })
 
