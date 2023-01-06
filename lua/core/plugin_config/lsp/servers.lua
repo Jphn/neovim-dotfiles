@@ -57,6 +57,14 @@ lsp.denols.setup({
 -- HTML (html) --
 -----------------
 lsp.html.setup({
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true,
+    },
+    provideFormatter = true,
+  },
   on_attach = on_attach,
   capabilities = capabilities,
 })
