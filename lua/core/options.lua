@@ -29,7 +29,7 @@ opt.scrolloff = 8
 
 -- Editor interface
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 o.termguicolors = true
 
 -- Map <leader> as space
