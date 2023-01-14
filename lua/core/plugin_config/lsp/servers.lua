@@ -41,7 +41,8 @@ lsp.sumneko_lua.setup({
 lsp.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", "*.html"),,
+	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", "*.html"),
+	single_file_support = false,
 })
 
 -------------------
@@ -51,6 +52,7 @@ lsp.denols.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+	single_file_support = false,
 })
 
 -----------------
