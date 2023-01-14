@@ -13,11 +13,20 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = nil
 
--- use spaces for tabs and whatnot
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.shiftround = true
-opt.expandtab = true
+-- use tabs for spaces and whatnot
+o.expandtab = false
+-- o.smarttab = true
+-- o.cindent = true
+-- o.autoindent = true
+o.wrap = true
+o.textwidth = 300
+o.tabstop = 2
+o.shiftwidth = 0
+o.softtabstop = -1 -- If negative, shiftwidth value is used
+o.list = true
+o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
+-- o.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
+-- o.formatoptions = 'qrn1'
 
 -- Undo and backup options
 opt.backup = false
