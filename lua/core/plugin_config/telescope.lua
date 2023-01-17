@@ -6,7 +6,9 @@ require("telescope").setup({
 
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-vim.keymap.set("n", "<Space><Space>", builtin.oldfiles, {})
-vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<Space>fh", builtin.help_tags, {})
+local map = require("core.utils").map
+
+map("n", "<C-p>", builtin.find_files)
+map("n", "<Space><Space>", builtin.oldfiles)
+map("n", "<Space>fg", builtin.live_grep)
+map("n", "<Space>fh", builtin.help_tags)
