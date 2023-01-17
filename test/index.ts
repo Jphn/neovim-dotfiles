@@ -3,6 +3,7 @@ function sum(n1: number, n2: number): number {
 }
 
 sum(1, 2);
+const i: boolean = sum(1, '2');
 
 // Try creating a simple object
 const foo = {
