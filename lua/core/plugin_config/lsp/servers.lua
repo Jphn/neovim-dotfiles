@@ -1,7 +1,3 @@
-vim.diagnostic.config({
-	virtual_text = false, -- Turn off inline diagnostics
-})
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lsp = require("lspconfig")
@@ -9,7 +5,6 @@ local util = lsp.util
 
 local map = require("core.utils").map
 local on_attach = function(_, _)
-	map("n", "<leader>do", vim.diagnostic.open_float)
 	map("n", "<leader>rn", vim.lsp.buf.rename)
 	map("n", "<leader>ca", vim.lsp.buf.code_action)
 
@@ -18,12 +13,6 @@ local on_attach = function(_, _)
 	map("n", "gr", require("telescope.builtin").lsp_references)
 	map("n", "K", vim.lsp.buf.hover)
 	-- map("i", "<C-h>", vim.lsp.buf.signature_help)
-
-	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-	for type, icon in pairs(signs) do
-		local hl = "DiagnosticSign" .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-	end
 end
 
 -----------------------
