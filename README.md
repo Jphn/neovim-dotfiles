@@ -25,4 +25,9 @@
 
 ## Usage
 
-Clone this repo inside of your Neovim configurations folder, then open Neovim and run `:PackerSync`.
+```sh
+git clone https://github.com/Jphn/neovim-configs.git ~/.config/nvim
+```
+
+Clone this repo inside of your Neovim configurations folder, then open Neovim
+and run `:PackerSync`.
