@@ -30,6 +30,12 @@ null_ls.setup({
 		-- Diagnostics --
 		-----------------
 		-- null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.diagnostics.cspell.with({
+			-- Force severity to be HINT
+			diagnostics_postprocess = function(diagnostic)
+				diagnostic.severity = vim.diagnostic.severity.HINT
+			end,
+		}),
 
 		----------------
 		-- Completion --
