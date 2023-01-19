@@ -28,13 +28,14 @@ return require("packer").startup({
 			end,
 		})
 
-		----------------------------
-		-- Dashboard (dashboard-nvim) --
-		----------------------------
+		--------------------------
+		-- Startup (alpha-nvim) --
+		--------------------------
 		use({
-			"glepnir/dashboard-nvim",
+			"goolord/alpha-nvim",
+			requires = { "nvim-tree/nvim-web-devicons" },
 			config = function()
-				require("core.plugin_config.dashboard")
+				require("alpha").setup(require("alpha.themes.startify").config)
 			end,
 		})
 

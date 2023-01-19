@@ -6,7 +6,7 @@
 
 - Packer
 - Tokyonight
-- Dashboard
+- Alpha-nvim
 - Nvim-tree
 - Nvim-web-devicons
 - Lualine
