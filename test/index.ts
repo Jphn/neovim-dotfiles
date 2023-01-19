@@ -11,7 +11,7 @@ const foo = {
 };
 
 class Person {
-	constructor(public name: string, private _age: number) { }
+	constructor(public name: string, private _age: number) {}
 
 	public set age(age: number) {
 		if (age > 0) this._age = age;
