@@ -10,4 +10,4 @@ end
 
 local map = require("core.utils").map
 
-map("n", "<leader>do", vim.diagnostic.open_float)
+map("n", "<C-i>", vim.diagnostic.open_float)
