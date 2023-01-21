@@ -173,6 +173,17 @@ return require("packer").startup({
 			after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
 		})
 
+		--------------------
+		-- Git (gitsigns) --
+		--------------------
+		use({
+			"lewis6991/gitsigns.nvim",
+			tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+			config = function()
+				require("core.plugin_config.gitsigns")
+			end,
+		})
+
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
 		if packer_bootstrap then
