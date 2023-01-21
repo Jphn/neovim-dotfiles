@@ -42,7 +42,7 @@ lsp.sumneko_lua.setup({
 lsp.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", "*.html"),
+	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
 	single_file_support = false,
 })
 
