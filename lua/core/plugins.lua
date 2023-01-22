@@ -77,12 +77,17 @@ return require("packer").startup({
 		----------------
 		-- Treesitter --
 		----------------
-		use("windwp/nvim-ts-autotag")
 		use({
-			"nvim-treesitter/nvim-treesitter",
-			config = function()
-				require("core.plugin_config.treesitter")
-			end,
+			{
+				"nvim-treesitter/nvim-treesitter",
+				config = function()
+					require("core.plugin_config.treesitter")
+				end,
+			},
+			{
+				"windwp/nvim-ts-autotag",
+				after = { "nvim-treesitter" }, -- or require if not used so far
+			},
 		})
 
 		---------------
@@ -101,28 +106,30 @@ return require("packer").startup({
 		-- LSP (Mason, LspSignature, LspConfig) --
 		-------------------------------
 		use({
-			"williamboman/mason.nvim",
-			config = function()
-				require("mason").setup()
-			end,
-		})
-		use({
-			"williamboman/mason-lspconfig.nvim",
-			config = function()
-				require("core.plugin_config.lsp.default")
-			end,
-		})
-		use({
-			"ray-x/lsp_signature.nvim",
-			config = function()
-				require("core.plugin_config.lsp.signature")
-			end,
-		})
-		use({
-			"neovim/nvim-lspconfig",
-			config = function()
-				require("core.plugin_config.lsp.servers")
-			end,
+			{
+				"williamboman/mason.nvim",
+				config = function()
+					require("mason").setup()
+				end,
+			},
+			{
+				"williamboman/mason-lspconfig.nvim",
+				config = function()
+					require("core.plugin_config.lsp.default")
+				end,
+			},
+			{
+				"ray-x/lsp_signature.nvim",
+				config = function()
+					require("core.plugin_config.lsp.signature")
+				end,
+			},
+			{
+				"neovim/nvim-lspconfig",
+				config = function()
+					require("core.plugin_config.lsp.servers")
+				end,
+			},
 		})
 
 		---------------------------------------------
@@ -139,16 +146,18 @@ return require("packer").startup({
 		---------------------------
 		-- Completion (Nvim CMP) --
 		---------------------------
-		use("hrsh7th/cmp-path")
-		use("hrsh7th/cmp-nvim-lsp")
-		use("L3MON4D3/LuaSnip")
-		use("saadparwaiz1/cmp_luasnip")
-		use("rafamadriz/friendly-snippets")
 		use({
-			"hrsh7th/nvim-cmp",
-			config = function()
-				require("core.plugin_config.completions")
-			end,
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lsp",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+			{
+				"hrsh7th/nvim-cmp",
+				config = function()
+					require("core.plugin_config.completions")
+				end,
+			},
 		})
 
 		-----------------------------------
@@ -178,7 +187,7 @@ return require("packer").startup({
 		--------------------
 		use({
 			"lewis6991/gitsigns.nvim",
-			tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+			-- tag = "release", -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
 			config = function()
 				require("core.plugin_config.gitsigns")
 			end,
