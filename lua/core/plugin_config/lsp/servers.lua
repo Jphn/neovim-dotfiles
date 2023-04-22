@@ -33,9 +33,9 @@ local on_attach = function(client, _)
 end
 
 -----------------------
--- Lua (sumneko_lua) --
+-- Lua (lua_ls) --
 -----------------------
-lsp.sumneko_lua.setup({
+lsp.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
