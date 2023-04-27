@@ -117,6 +117,7 @@ return require("packer").startup({
 				config = function()
 					require("core.plugin_config.lsp.default")
 				end,
+				after = { "mason.nvim" },
 			},
 			{
 				"ray-x/lsp_signature.nvim",
